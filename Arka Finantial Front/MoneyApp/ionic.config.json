@@ -1,0 +1,8 @@
+{
+  "name": "MoneyApp",
+  "integrations": {
+    "capacitor": {},
+    "cordova": {}
+  },
+  "type": "angular"
+}

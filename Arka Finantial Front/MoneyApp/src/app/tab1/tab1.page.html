@@ -1,0 +1,193 @@
+<ion-header class="ion-no-border" translucent="true">
+  <ion-toolbar>
+    <ion-buttons class="ion-mt-3" slot="start">
+      <ion-button>
+        <ion-icon name="apps"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+    <ion-buttons class="ion-mt-3" slot="end">
+      <ion-button>
+        <ion-icon name="notifications"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+  <!-- <ion-item lines="none" style="background-color: red !important">
+    <ion-avatar slot="start">
+      <img
+        src="https://scontent.fsjo1-1.fna.fbcdn.net/v/t1.0-9/117718771_3398406306878497_46696858822403888_o.jpg?_nc_cat=106&ccb=2&_nc_sid=174925&_nc_ohc=Wkno5_h8554AX-BYGak&_nc_ht=scontent.fsjo1-1.fna&oh=5204f5adbcbc23d7e9841920652d7c04&oe=6016A7A2"
+      />
+    </ion-avatar>
+    <ion-label>
+      <p>Hola,</p>
+      <h3>Oscar Morales</h3>
+    </ion-label>
+  </ion-item> -->
+</ion-header>
+
+<ion-content [scrollY]="false" fullscreen="true">
+  <div class="slides ion-margin-bottom">
+    <ion-slides [options]="slidesOptions" [pager]="true">
+      <ion-slide>
+        <ion-grid>
+          <ion-row class="ion-m-3">
+            <ion-col>
+              <ion-card class="bg-card one">
+                <div class="ion-text-center">
+                  <small style="color: rgba(218, 218, 218, 0.596)"
+                    >BALANCE</small
+                  >
+                </div>
+                <div class="ion-text-center">
+                  <h1 style="margin-top: 3px">₡128,000</h1>
+                </div>
+              </ion-card>
+            </ion-col>
+          </ion-row>
+          <ion-row class="ion-m-3">
+            <ion-col
+              ><small style="color: rgba(218, 218, 218, 0.596)">Ingresos</small>
+              <h4 style="color: white; margin-top: 5px">₡14,125</h4>
+            </ion-col>
+            <ion-col>
+              <small style="color: rgba(218, 218, 218, 0.596)">Gastos</small>
+              <h4 style="color: white; margin-top: 5px">₡7,400</h4>
+            </ion-col>
+            <ion-col>
+              <small style="color: rgba(218, 218, 218, 0.596)"
+                >Procentaje</small
+              >
+              <h4 style="color: white; margin-top: 5px">35%</h4>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-slide>
+
+      <ion-slide>
+        <ion-card class="bg-card one">
+          <canvas #barChart></canvas>
+        </ion-card>
+      </ion-slide>
+    </ion-slides>
+  </div>
+
+  <div class="container">
+    <h6 style="font-weight: bolder">Transacciones</h6>
+    <ion-segment (ionChange)="segmentChanged($event)" value="todos">
+      <ion-segment-button value="todos">
+        <ion-label>Todos &#36;</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="entradas">
+        <ion-label>Entradas</ion-label>
+      </ion-segment-button>
+      <ion-segment-button value="salidas">
+        <ion-label>Salidas</ion-label>
+      </ion-segment-button>
+    </ion-segment>
+    <ion-list class="ion-mt-3">
+      <ion-item class="ion-no-padding">
+        <ion-col size="2">
+          <div class="icon-container">
+            <ion-icon
+              class="transac-icon"
+              name="arrow-up-outline"
+              color="danger"
+              slot="center"
+            ></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="7">
+          <p style="font-size: 14px; font-weight: bold; margin: 0">
+            Pago de taxi
+          </p>
+          <p
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              margin-top: 5px;
+              margin-bottom: 0;
+              color: rgb(148, 148, 148);
+            "
+          >
+            Hace 2 días
+          </p>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text
+            style="font-size: 14px; font-weight: regular; margin: 0"
+            color="danger"
+          >
+            - ₡3500
+          </ion-text>
+        </ion-col>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-col size="2">
+          <div class="icon-container">
+            <ion-icon
+              class="transac-icon"
+              name="arrow-down-outline"
+              color="primary"
+              slot="center"
+              style="font-size: 16px"
+            ></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="7">
+          <p style="font-size: 14px; font-weight: bolder; margin: 0">
+            Comedera
+          </p>
+          <p
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              margin-top: 5px;
+              margin-bottom: 0;
+              color: rgb(148, 148, 148);
+            "
+          >
+            Hace 2 días
+          </p>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text style="font-size: 14px; margin: 0" color="success">
+            + ₡1500
+          </ion-text>
+        </ion-col>
+      </ion-item>
+      <ion-item class="ion-no-padding">
+        <ion-col size="2">
+          <div class="icon-container">
+            <ion-icon
+              class="transac-icon"
+              name="arrow-up-outline"
+              color="danger"
+              slot="center"
+            ></ion-icon>
+          </div>
+        </ion-col>
+        <ion-col size="7">
+          <p style="font-size: 14px; font-weight: bold; margin: 0">
+            Pago de taxi
+          </p>
+          <p
+            style="
+              font-size: 10px;
+              font-weight: bold;
+              margin-top: 1px;
+              margin-bottom: 0;
+              color: rgb(148, 148, 148);
+            "
+          >
+            Hace 2 días
+          </p>
+        </ion-col>
+        <ion-col size="3">
+          <ion-text style="font-size: 14px; margin: 0" color="danger">
+            - ₡3500
+          </ion-text>
+        </ion-col>
+      </ion-item>
+    </ion-list>
+  </div>
+</ion-content>
