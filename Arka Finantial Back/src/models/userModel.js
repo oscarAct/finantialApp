@@ -9,7 +9,8 @@ const UserSchema = Schema(
     email: { type: String, unique: true },
     password: { type: String },
     initials: { type: String },
-    activated: { type: Boolean },
+    balance: { type: Number },
+    emailConfirmed: { type: Boolean, default: false },
     incoming: [{ type: Schema.ObjectId, ref: "Incoming" }],
     outgoing: [{ type: Schema.ObjectId, ref: "Outgoing" }],
     savings: [{ type: Schema.ObjectId, ref: "Savings" }],
@@ -18,6 +19,7 @@ const UserSchema = Schema(
     unsetAccount: { type: Boolean, required: true },
     currency: { type: Schema.ObjectId, ref: "Currency" },
     profilePhoto: { type: String },
+    deleted: { type: Boolean, default: false },
   },
   { versionKey: false, timestamps: true }
 );

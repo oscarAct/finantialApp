@@ -44,7 +44,6 @@ exports.authenticated = async function (req, res, next) {
       message: "Token invalid",
     });
   }
-
   req.user = payload;
   next();
 };

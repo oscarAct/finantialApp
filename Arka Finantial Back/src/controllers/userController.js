@@ -21,10 +21,10 @@ controller.saveUser = async (req, res) => {
       user.email = email.toLowerCase();
       user.password = password;
       user.initials = name.charAt(0) + surname.charAt(0);
-      user.activated = true;
       user.incoming = [];
       user.outgoing = [];
       user.savings = [];
+      user.balance = 0;
       user.fixedIncome = false;
       user.fixedIncomes = [];
       user.unsetAccount = true;

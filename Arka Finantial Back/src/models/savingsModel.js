@@ -9,6 +9,7 @@ const SavingsSchema = Schema(
     currentAmount: { type: Number },
     incoming: [{ type: Schema.ObjectId, ref: "Incoming" }],
     outgoing: [{ type: Schema.ObjectId, ref: "Outgoing" }],
+    deleted: { type: Boolean, default: false },
   },
   { versionKey: false, timestamps: true }
 );

@@ -6,7 +6,10 @@ const app = express();
 
 //Loading routes
 const userRoutes = require("./src/routes/user");
-const tasksRoutes = require("./src/routes/tasks");
+const currencyRoutes = require("./src/routes/currency");
+const fixedIncomesRoutes = require("./src/routes/fixedIncomes");
+const incoming = require("./src/routes/incoming");
+const savings = require("./src/routes/savings");
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -26,5 +29,9 @@ app.use((req, res, next) => {
 
 // re-writing routes
 app.use("/api", userRoutes);
-//app.use("/api", tasksRoutes);
+app.use("/api", currencyRoutes);
+app.use("/api", fixedIncomesRoutes);
+app.use("/api", incoming);
+app.use("/api", savings);
+
 module.exports = app;

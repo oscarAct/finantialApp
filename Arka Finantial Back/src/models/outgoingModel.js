@@ -5,9 +5,11 @@ const { Schema } = mongoose;
 const OutgoingSchema = Schema(
   {
     name: { type: String, required: true, trim: true },
+    description: { type: String, required: false, trim: true },
     amount: { type: Number },
     needed: { type: Boolean },
     target: { type: String },
+    deleted: { type: Boolean, default: false },
   },
   { versionKey: false, timestamps: true }
 );

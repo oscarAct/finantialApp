@@ -5,8 +5,10 @@ const { Schema } = mongoose;
 const IncomingSchema = Schema(
   {
     name: { type: String, required: true, trim: true },
+    description: { type: String, required: false, trim: true },
     amount: { type: Number },
     target: { type: String },
+    deleted: { type: Boolean, default: false },
   },
   { versionKey: false, timestamps: true }
 );

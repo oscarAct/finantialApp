@@ -5,7 +5,7 @@ const { Schema } = mongoose;
 const FixedIncomesSchema = Schema(
   {
     amount: { type: String, required: true, trim: true },
-    date: { type: Date },
+    dateDay: { type: Number },
   },
   { versionKey: false, timestamps: true }
 );
