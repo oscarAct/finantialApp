@@ -1,0 +1,57 @@
+<ion-content>
+  <ion-slides [options]="slideOpts" pager="true" mode="ios">
+    <ion-slide>
+      <div class="slide">
+        <img src="../../../assets/img/data-analysis.svg" />
+        <h2>Bienvenido</h2>
+        <p>
+          Para comenzar, queremos que llenes algunos datos. Estos datos, nos van
+          a ayudar a configurar tu espacio inicial en la aplicación.
+        </p>
+      </div>
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/img/payment-method.svg" />
+      <div *ngIf="selectedDivisa" class="coin">
+        <div class="coin-inside">
+          <h1 [innerHTML]="divisa"></h1>
+        </div>
+      </div>
+      <h2>¿Cuál es tu divisa?</h2>
+      <p>
+        Comienza por comentarnos cual es la divisa con la que quieres manejar tu
+        dinero.
+      </p>
+      <button class="ion-text-primary" (click)="showBasicPicker()">
+        Seleccionar una divisa
+      </button>
+    </ion-slide>
+    <ion-slide>
+      <img src="../../../assets/img/financial.svg" />
+      <h2>¿Cuanto dinero tienes?</h2>
+      <p>
+        Debe ser la cantidad total de dinero que posees. Tanto en efectivo como
+        dinero en tus cuentas bancarias.
+      </p>
+      <input type="text" class="input" [(ngModel)]="valor" name="monto" />
+    </ion-slide>
+
+    <ion-slide>
+      <div *ngIf="selectedDivisa && valor != undefined && valor != ''">
+        <img class="img" src="../../../assets/img/contract.svg" />
+        <h1 style="color: rgb(24, 24, 24)">¡TODO LISTO!</h1>
+        <ion-button
+          fill="clear"
+          routerLink="/tabs/tab1"
+          routerDirection="forward"
+          >Continue <ion-icon slot="end" name="arrow-forward"></ion-icon
+        ></ion-button>
+      </div>
+      <div *ngIf="!selectedDivisa || valor == undefined || valor == ''">
+        <img class="img" src="../../../assets/img/document.svg" />
+        <h2 style="color: rgb(24, 24, 24)">Campos obligatorios</h2>
+        <p>Por favor completa todos los espacios, para poder continuar.</p>
+      </div>
+    </ion-slide>
+  </ion-slides>
+</ion-content>

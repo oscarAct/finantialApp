@@ -1,0 +1,55 @@
+<ion-content>
+  <ion-row>
+    <span class="mx-auto logo">
+      <img
+        src="../../assets/img/graphic-connection(1).svg"
+        alt="Logo"
+        width="64px"
+        height="64px"
+        class="mx-auto"
+      />
+    </span>
+  </ion-row>
+  <ion-row class="primary-title">
+    <h1 style="font-weight: bolder" class="mx-auto">Iniciar Sesión</h1>
+  </ion-row>
+  <ion-row>
+    <span
+      style="color: rgb(129, 129, 129); font-size: small; margin-top: -10px"
+      class="mx-auto"
+      >Inicia sesión para continuar</span
+    >
+  </ion-row>
+  <ion-row>
+    <label class="label">Correo electrónico</label>
+    <ion-icon name="mail-outline" class="icon"></ion-icon>
+    <input class="input mx-auto" name="name" type="email" />
+  </ion-row>
+  <ion-row>
+    <label class="label">Contraseña</label>
+    <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+    <input class="input mx-auto" name="name" type="password" />
+  </ion-row>
+  <ion-row style="margin-left: 10%; margin-right: 10%">
+    <p class="ml-auto" style="font-size: smaller; color: #09316f">
+      Olvidé mi contraseña
+    </p>
+  </ion-row>
+
+  <ion-row>
+    <button class="button mx-auto">INICIAR SESIÓN</button>
+  </ion-row>
+  <ion-row>
+    <span
+      style="font-size: small; color: rgb(129, 129, 129); margin-top: 8%"
+      class="mx-auto"
+      >¿Aún no tienes una cuenta?
+      <span
+        style="color: #09316f"
+        routerLink="/register"
+        routerDirection="forward"
+        >Registráte ahora</span
+      ></span
+    >
+  </ion-row>
+</ion-content>

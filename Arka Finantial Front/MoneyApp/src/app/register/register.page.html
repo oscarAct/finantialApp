@@ -1,0 +1,88 @@
+<ion-content class="bg-light">
+  <span>
+    <ion-icon
+      routerLink="/login"
+      routerDirection="back"
+      name="arrow-back-outline"
+      class="go-back"
+    ></ion-icon>
+  </span>
+  <ion-row class="primary-title">
+    <h1 style="font-weight: bolder" class="mx-auto">Registrarse</h1>
+  </ion-row>
+  <ion-row>
+    <span
+      style="color: rgb(129, 129, 129); font-size: small; margin-top: -10px"
+      class="mx-auto"
+      >Crea una nueva cuenta</span
+    >
+  </ion-row>
+  <form #addUser="ngForm">
+    <ion-row>
+      <label class="label">Nombre</label>
+      <ion-icon name="person-outline" class="icon"></ion-icon>
+      <input
+        class="input mx-auto"
+        [(ngModel)]="user.name"
+        name="name"
+        type="text"
+      />
+    </ion-row>
+    <ion-row>
+      <label class="label">Apellidos</label>
+      <ion-icon name="person-outline" class="icon"></ion-icon>
+      <input
+        class="input mx-auto"
+        [(ngModel)]="user.surname"
+        name="surname"
+        type="text"
+      />
+    </ion-row>
+    <ion-row>
+      <label class="label">Correo electrónico</label>
+      <ion-icon name="mail-outline" class="icon"></ion-icon>
+      <input
+        class="input mx-auto"
+        [(ngModel)]="user.email"
+        name="email"
+        type="email"
+      />
+    </ion-row>
+    <ion-row>
+      <label class="label">Contraseña</label>
+      <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+      <input
+        class="input mx-auto"
+        [(ngModel)]="user.password"
+        type="password"
+        name="password"
+      />
+    </ion-row>
+    <ion-row>
+      <label class="label">Confirmar contraseña</label>
+      <ion-icon name="lock-closed-outline" class="icon"></ion-icon>
+      <input
+        class="input mx-auto"
+        [(ngModel)]="user.confirmPassword"
+        type="password"
+        name="confirmPassword"
+      />
+    </ion-row>
+    <ion-row>
+      <button class="button mx-auto" (click)="createUser(addUser)">
+        CREAR CUENTA
+      </button>
+    </ion-row>
+  </form>
+
+  <ion-row>
+    <span
+      style="font-size: small; color: rgb(129, 129, 129); margin-top: 8%"
+      class="mx-auto"
+      >¿Ya tienes una cuenta?
+      <span style="color: #003cc0" routerLink="/login" routerDirection="back"
+        >Inicia sesión</span
+      ></span
+    >
+  </ion-row>
+</ion-content>

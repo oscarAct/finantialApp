@@ -52,7 +52,11 @@ controller.saveUser = async (req, res) => {
             } else {
               return res
                 .status(200)
-                .send({ status: true, token: jwt.createToken(userStored) });
+                .send({
+                  status: true,
+                  token: jwt.createToken(userStored),
+                  user: userStored,
+                });
             }
           }); // close save
         }

@@ -182,3 +182,13 @@ ion-list {
   margin-left: 3.9px;
   margin-top: 3.5px;
 }
+.initials {
+  width: 32px;
+  height: 32px;
+  border-radius: 100px;
+  background: #4e54c8;
+  background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
+  background: linear-gradient(to right, #8f94fb, #4e54c8);
+
+  padding: 7px 2px;
+}
