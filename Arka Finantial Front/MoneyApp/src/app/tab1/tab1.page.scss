@@ -37,11 +37,20 @@ ion-header {
 }
 
 ion-content {
-  --background: url("https://image.freepik.com/free-vector/elegant-dark-wavy-net-background_23-2148402777.jpg") !important;
-  --background-size: cover !important;
-  // --background: #0575e6 !important;
-  // --background: -webkit-linear-gradient(to right, #021b79, #012196) !important;
-  // --background: linear-gradient(to right, #021b79, #012196) !important;
+  //--background: url("https://image.freepik.com/free-vector/elegant-dark-wavy-net-background_23-2148402777.jpg") !important;
+  //--background-size: cover !important;
+  --background: #000046; /* fallback for old browsers */
+  --background: -webkit-linear-gradient(
+    to bottom,
+    #1cb5e0,
+    #000046
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  --background: linear-gradient(
+    to bottom,
+    #1cb5e0,
+    #000046
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
   .slides {
     padding: 4px 10px 4px 10px;
     border-radius: 0 0 32px 32px;
@@ -186,9 +195,17 @@ ion-list {
   width: 32px;
   height: 32px;
   border-radius: 100px;
-  background: #4e54c8;
-  background: -webkit-linear-gradient(to right, #8f94fb, #4e54c8);
-  background: linear-gradient(to right, #8f94fb, #4e54c8);
+  background: #0575e6; /* fallback for old browsers */
+  background: -webkit-linear-gradient(
+    to bottom,
+    #021b79,
+    #0575e6
+  ); /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #021b79,
+    #0575e6
+  ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 
-  padding: 7px 2px;
+  padding: 10px 2px;
 }
